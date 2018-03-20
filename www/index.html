@@ -39,16 +39,13 @@
         <div class="app">
             <h1>Apache Cordova</h1>
 
-            <input type="button" onclick="voix();" value="Parler a djingo">Parler a djingo</input>
+
+
+            <input type="button" onclick="lol();" value="Parler a djingo">Parler a djingo</input>
             <input id="voice" value="">
 
 
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
 
-
-            </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -58,41 +55,11 @@
 
 <script>
 
-function voix(){
 
-    alert('lol');
+    function lol() {
+        alert('lol')
 
-    var language = "fr-FR";
-    var matches = 1;
-    var prompt = "";     // Android only
-    var showPopup = true;  // Android only
-    var showPartial = false;
-
-
-    let options = {
-         language,
-         matches,
-         prompt,      // Android only
-         showPopup,  // Android only
-         showPartial
     }
 
 
-    window.plugins.speechRecognition.startListening(
-        function(successCallback){
-
-        document.getElementById('voice').value = successCallback;
-
-
-    },
-    function(errorCallback){
-            alert('toto');
-
-    },
-    options)
-
-
-
-
-}
 </script>
