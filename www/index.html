@@ -41,7 +41,7 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
-
+<bouton onclick="voix()">Parler a djingo </bouton>
                 <input id="voice" value="">
 
             </div>
@@ -73,9 +73,19 @@ function voix(){
 
 
     window.plugins.speechRecognition.startListening(
-        Function successCallback, Function errorCallback, Object options)
+        function(successCallback){
 
-    document.getElementById('voice').value = successCallback;
+        document.getElementById('voice').value = successCallback;
+
+
+    },
+    function(errorCallback){
+            alert('toto');
+
+    },
+    options)
+
+
 
 
 }
