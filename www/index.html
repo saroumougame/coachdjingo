@@ -41,9 +41,42 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
+
+                <input id="voice" value="">
+
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
+
+
+<script>
+
+function voix(){
+
+    var language = "fr-FR";
+    var matches = 1;
+    var prompt = "";     // Android only
+    var showPopup = true;  // Android only
+    var showPartial = false;
+
+
+    let options = {
+         language,
+         matches,
+         prompt,      // Android only
+         showPopup,  // Android only
+         showPartial
+    }
+
+
+    window.plugins.speechRecognition.startListening(
+        Function successCallback, Function errorCallback, Object options)
+
+    document.getElementById('voice').value = successCallback;
+
+
+}
+</script>
